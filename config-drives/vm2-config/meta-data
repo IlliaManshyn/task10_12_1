@@ -1,0 +1,17 @@
+instance-id: 13041373d8123-26b7-4825-8f2d-797fc25f131f
+hostname: vm2
+local-hostname: vm2
+network-interfaces: |
+  auto enp0s3
+  iface enp0s3 inet static 
+  gateway 192.168.124.101
+  address 192.168.124.102
+  network 192.168.124.0
+  netmask 255.255.255.0
+
+  auto enp0s4
+  iface enp0s4 inet static
+  address 192.168.125.102 
+  network 192.168.125.0
+  netmask 255.255.255.0
+

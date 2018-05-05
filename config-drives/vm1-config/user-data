@@ -1,0 +1,8 @@
+#cloud-config
+password: qwerty
+chpasswd: { expire: False }
+runcmd:
+ - 'sysctl net.ipv4.ip_forward=1'
+ - 'iptables -t nat -A POSTROUTING -o enp0s3 -j MASQUERADE'
+ssh_authorized_keys:
+  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDNbT8UUeYNCqvasWtqou0jf+8fPdq19CG3snXavTyL4aGnlUQBdqOA26KTSKNjaEsoDSjhuxgvqgixiPwuCcfKSw/TgbgU0Tg/pijobzzpL7ydH22b/h8RyGdELdqsvu6ShqD2vixuGG8gSoGndMWQzVX9iaA1GH0u/A5+EtTiU91XtFbGHUOG9ftqvE68YNnd98VSvQZgahHcOYwm+CbW5K4PGdjBZMxLKdCJMLCZ1SHEVQOMOKPX8GGdc7phcY4/jsPK7U6smDnhnQbyLKw4DwVeng4HJ5swX5z4aVu1whkb78NKbRdH2YbKwZJxztLldHhSPqwGi0PvtPwKCESN  ubuntu@192.168.125.101
