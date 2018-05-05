@@ -1,5 +1,5 @@
 <network>
-  <name>management</name>
-     <ip address='192.168.125.1' netmask='255.255.255.0'/>
+  <name>MANAGEMENT</name>
+     <ip address='MANAGEMENT_HOST_IP' netmask='MANAGEMENT_NET_MASK'/>
 </network>
 
