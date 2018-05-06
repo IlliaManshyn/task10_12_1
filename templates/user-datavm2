@@ -1,0 +1,15 @@
+#cloud-config
+password: qwerty
+chpasswd: { expire: False }
+runcmd:
+ - 'ip link add VXLAN_IF type vxlan id VID remote VM1_INTERNAL_IP local VM2_INTERNAL_IP dstport 4789'
+ - 'ip link set VXLAN_IF up'
+ - 'ip addr add VXLAN_NET.2/24 dev VXLAN_IF'
+ - 'apt-get update'
+ - 'apt-get install curl -y'
+ - 'curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -'
+ - 'add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"'
+ - 'apt-get update'
+ - 'apt-get install docker-ce -y'
+ssh_authorized_keys:
+  - ssh-rsa KEY  ubuntu@VM2_MANAGEMENT_IP
