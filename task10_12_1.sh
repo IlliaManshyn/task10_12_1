@@ -51,7 +51,7 @@ cat $dir/templates/vm2.xml | \
 sed 's/VM2_NAME/'$VM2_NAME'/; s/VM2_NUM_CPU/'$VM2_NUM_CPU'/; s/VM2_MB_RAM/'$VM2_MB_RAM'/; s/VM_TYPE/'$VM_TYPE'/; s@VM2_HDD@'$VM2_HDD'@; s@VM2_CONFIG_ISO@'$VM2_CONFIG_ISO'@; s/INTERNAL_NET_NAME/'$INTERNAL_NET_NAME'/; s/MANAGEMENT_NET_NAME/'$MANAGEMENT_NET_NAME'/' > $dir/vm2.xml
 
 
-#wget -O /var/lib/libvirt/images/ubuntu-server-16.04.qcow2 $VM_BASE_IMAGE
+wget -O /var/lib/libvirt/images/ubuntu-server-16.04.qcow2 $VM_BASE_IMAGE
 
 cp /var/lib/libvirt/images/ubuntu-server-16.04.qcow2 $VM1_HDD
 cp /var/lib/libvirt/images/ubuntu-server-16.04.qcow2 $VM2_HDD
