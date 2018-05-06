@@ -1,5 +1,0 @@
-#cloud-config
-password: qwerty
-chpasswd: { expire: False }
-ssh_authorized_keys:
-  - ssh-rsa KEY  ubuntu@VM2_MANAGEMENT_IP

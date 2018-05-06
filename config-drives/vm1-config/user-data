@@ -1,8 +1,0 @@
-#cloud-config
-password: qwerty
-chpasswd: { expire: False }
-runcmd:
- - 'sysctl net.ipv4.ip_forward=1'
- - 'iptables -t nat -A POSTROUTING -o enp0s3 -j MASQUERADE'
-ssh_authorized_keys:
-  - ssh-rsa KEY  ubuntu@VM1_MANAGEMENT_IP

@@ -1,5 +1,0 @@
-<network>
-  <name>MANAGEMENT</name>
-     <ip address='MANAGEMENT_HOST_IP' netmask='MANAGEMENT_NET_MASK'/>
-</network>
-
