@@ -29,8 +29,8 @@ mkdir /var/lib/libvirt/vm1
 mkdir /var/lib/libvirt/vm2
 
 #Configuring vm1 meta-data, user-data and vm1.xml
-yes "y" | ssh-keygen -f .ssh/id_rsa -N ""
-key="$(cat .ssh/id_rsa.pub | cut -d ' ' -f2)"
+yes "y" | ssh-keygen -f $(echo $SSH_PUB_KEY | rev | cut -c5- | rev) -N ""
+key="$(cat $SSH_PUB_KEY | cut -d ' ' -f2)"
 cat $dir/templates/user-datavm1 | \
 sed 's@KEY@'$key'@; s/VM1_MANAGEMENT_IP/'$VM1_MANAGEMENT_IP'/; s/VXLAN_NET/'$VXLAN_NET'/g; s/VXLAN_IF/'$VXLAN_IF'/g; s/VID/'$VID'/; s/VM1_INTERNAL_IP/'$VM1_INTERNAL_IP'/; s/VM2_INTERNAL_IP/'$VM2_INTERNAL_IP'/; s/VM_DNS/'$VM_DNS'/' > $dir/config-drives/vm1-config/user-data 
 
