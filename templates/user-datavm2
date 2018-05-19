@@ -4,7 +4,7 @@ chpasswd: { expire: False }
 runcmd:
  - 'ip link add ${VXLAN_IF} type vxlan id ${VID} remote ${VM1_INTERNAL_IP} local ${VM2_INTERNAL_IP} dstport 4789'
  - 'ip link set ${VXLAN_IF} up'
- - 'ip addr add ${VM2_VXLAN_IP} dev ${VXLAN_IF}'
+ - 'ip addr add ${VM2_VXLAN_IP}/24 dev ${VXLAN_IF}'
  - 'apt-get update'
  - 'apt-get install curl -y'
  - 'curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -'
