@@ -7,11 +7,11 @@ export MAC=52:54:00:`(date; cat /proc/interrupts) | md5sum | sed -r 's/^(.{6}).*
 export $(grep -v '#' $dir/config)
 envsubst < $dir/config > $dir/exec_config
 export $(grep -v '#' $dir/exec_config)
-#Creating directories
 
+#Creating directories
 mkdir -p $(echo $SSH_PUB_KEY | rev | cut -c12- | rev)
-mkdir /var/lib/libvirt/vm1
-mkdir /var/lib/libvirt/vm2
+mkdir -p /var/lib/libvirt/vm1
+mkdir -p /var/lib/libvirt/vm2
 mkdir $dir/networks
 mkdir -p $dir/config-drives/vm1-config
 mkdir -p $dir/config-drives/vm2-config
