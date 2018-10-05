@@ -14,4 +14,5 @@ runcmd:
  - 'apt-get update'
  - 'apt-get install docker-ce -y'
 ssh_authorized_keys:
-  - ssh-rsa ${key}  ubuntu@${VM1_MANAGEMENT_IP}
+  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCemkkANBK67vbuH+S0e9OFe/dAog1BuG9gpTOluxk2RekPU9LRtRDIUSeMSXrAfIATZihmfFA2P9/iMXZUNbg0IAP/XB1kcXHJd0jAORmyvpsn31HML8XtaK0sOWjU+SvIpuMBSElNcaPRAe64b5tDNX9QX/hFzQEsWOA20X2dDmXfRtVfRZuKFS4bkGQooPWjyGm1th0gYy+iu2K/kC7jKQpGpD7vKyxTCOZ/lFx94lQ4WyTSV8tyh/Du8vVo3wUg3U12pdmAbLUemkdSujOHNa6nzA0oCfVYHJ/CmLwrz4iT2M9ptunlWTep50peMq2Z54baSiwgH1BzGyCjAdtj
+
